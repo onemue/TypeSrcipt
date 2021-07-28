@@ -84,4 +84,15 @@ function infiniteLoop(): never {
   while (true) {}
 }
 
-// TODO 类型断言
+// NOTE 10. 类型断言
+// 什么是类型断言？ -- 告诉编译器：“相信我，我知道自己在干什么”
+
+// NOTE 10.1 尖括号用法
+let anyValue: any = "this is string";
+
+let anyValueLength: number = (<string>anyValue).length;
+// NOTE 10.2 as 用法
+let asAnyValue: any = "this is string";
+
+let asANyValueLength: number = (asAnyValue as string).length;
+// tips:当你在TypeScript里使用JSX时，只有as语法断言是被允许的。所以还是使用as语法吧。
